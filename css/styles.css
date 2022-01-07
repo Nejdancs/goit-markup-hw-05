@@ -250,12 +250,11 @@ img {
 /* Section hero
 ================================== */
 
-.section-hero {
+.container-fluid {
   background-color: #2f303a;
-  text-align: center;
 }
 
-.container-hero {
+.section-hero {
   max-width: 1600px;
   margin: 0 auto;
   padding-top: 200px;
@@ -266,6 +265,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  text-align: center;
 }
 
 .hero-title {
@@ -735,6 +735,7 @@ img {
   display: flex;
   width: 30px;
   height: 30px;
+  padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 
