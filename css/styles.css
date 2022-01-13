@@ -141,6 +141,11 @@ img {
 ================================== */
 
 .page-header {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+
+  width: 100%;
   border-bottom: 1px solid #ececec;
 
   background-color: var(--primary-bg-color);
@@ -251,6 +256,7 @@ img {
 ================================== */
 
 .container-fluid {
+  margin-top: 80px;
   background-color: #2f303a;
 }
 
@@ -476,6 +482,10 @@ img {
 /* Portfolio
 ================================== */
 
+.section-portfolio {
+  margin-top: 80px;
+}
+
 /* Filter button
 ================================== */
 
@@ -686,14 +696,14 @@ img {
 }
 
 /* Backdrop
-============================================= */
+======================================================= */
 
 .backdrop {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
 
   background-color: rgba(0, 0, 0, 0.2);
 
@@ -710,7 +720,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1);
 
   width: 528px;
   min-height: 581px;
@@ -724,7 +734,7 @@ img {
 }
 
 .is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scaleY(0);
 }
 
 .modal-btn-close {
@@ -743,16 +753,56 @@ img {
   color: #000000;
   cursor: pointer;
 
-  transition: color 250ms var(--cubic), border-color 250ms var(--cubic);
+  transition: 250ms var(--cubic);
 }
 
 .modal-btn-close:hover,
 .modal-btn-close:focus {
   color: var(--accent-color);
   border-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 50% 50% 0;
+  border-left: none;
+}
+
+.modal-btn-close .btn-close-text {
+  position: absolute;
+  right: 100%;
+  top: -1px;
+  bottom: -1px;
+
+  display: inline-flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: none;
+
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 30px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(15px);
+  transition: 250ms var(--cubic);
+}
+
+.modal-btn-close:hover .btn-close-text {
+  visibility: visible;
+  transform: translateX(0);
+  opacity: 1;
+  border-color: rgba(0, 0, 0, 0.3);
+  color: var(--accent-color);
 }
 
 .btn-icon {
   margin: auto;
   fill: currentColor;
+  transition: transform 250ms var(--cubic);
+}
+
+.modal-btn-close:hover .btn-icon {
+  transform: rotate(-270deg);
 }
