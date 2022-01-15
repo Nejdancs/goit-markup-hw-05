@@ -52,18 +52,6 @@ img {
   overflow: hidden;
 }
 
-.card-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  visibility: hidden;
-}
-
 /* сommon
 ===================================== */
 .section {
@@ -547,6 +535,10 @@ img {
   margin-top: var(--card-set-gap);
 
   background-color: #ffffff;
+}
+
+.card-set-item.visually-hidden {
+  visibility: hidden;
 }
 
 .card-set-link {

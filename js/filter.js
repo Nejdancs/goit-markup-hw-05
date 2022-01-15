@@ -7,9 +7,9 @@ function app() {
       const isItemFiltered = !item.classList.contains(category)
       const isShowAll = category.toLowerCase() === 'all'
       if (isItemFiltered && !isShowAll) {
-        item.classList.add('card-hidden')
+        item.classList.add('visually-hidden')
       } else {
-        item.classList.remove('card-hidden')
+        item.classList.remove('visually-hidden')
       }
     })
   }
